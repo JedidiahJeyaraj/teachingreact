@@ -2,26 +2,30 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Name from "./Name";
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      age : ""
+    };
+
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Name name="Joel" age={"12344"} />
+        <Name name={"Joel"} age={"q2eqwe"}/>
+        <Name name={"Joel"} age={"123vasas44"}/>
+        <Name name={"Joel"} age={"12344"}/>
       </div>
     );
+  }
+
+  componentDidMount() {
+    this.setState({name:this.props.name, age:"34567"});
   }
 }
 
